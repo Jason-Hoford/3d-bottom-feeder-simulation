@@ -10,14 +10,13 @@ A GPU-accelerated 3D neural network fish tank simulation where fish evolve to gr
 
 ![Training Progress](assets/training_log.png)
 
-## Visualization Modes
-
 | ![Normal Mode](assets/normal_mode.png) | ![Density Mode](assets/density_mode.png) | ![Flow Mode](assets/flow_mode.png) |
 |:--------------------------------------:|:----------------------------------------:|:----------------------------------:|
 |        **Normal Mode**                 |         **Density Mode**                 |        **Flow Mode**               |
 
 > **What is this simulating?**  
 > An ecosystem where fish must survive by efficiently grazing on a dense cloud of 10,000+ food particles. Each fish is controlled by a neural network that evolves through natural selection to optimize foraging behavior.
+
 
 ---
 
