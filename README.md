@@ -717,7 +717,7 @@ If you use this code in your research, please cite:
   title={3D Bottom Feeder Simulation},
   author={Jason Hoford},
   year={2025},
-  url={https://github.com/yourusername/3d-bottom-feeder}
+  url={https://github.com/yourusername/3d-bottom-feeder-simulation}
 }
 ```
 
