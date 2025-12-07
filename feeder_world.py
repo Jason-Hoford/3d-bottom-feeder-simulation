@@ -15,7 +15,7 @@ from feeder_physics import FeederPhysics
 
 class FeederWorld:
     def __init__(self):
-        self.physics = FeederPhysics(max_fish=1000) # Support up to 1000 fish
+        self.physics = FeederPhysics(max_fish=10000) # Support up to 1000 fish
         self.fish: List[FeederFish] = []
         self.food_respawn_queue = [] # List of (index, respawn_time)
         self.sim_time = 0.0

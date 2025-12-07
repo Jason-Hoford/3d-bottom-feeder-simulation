@@ -493,17 +493,48 @@ for each weight in neural_network:
         weight += random_normal(0, mutation_strength=0.1)
 ```
 
-#### Training Logs
+#### Training Analytics (New)
 
-Logs are saved as JSON with fields:
-- `epoch`: Epoch number
-- `avg_fitness`: Average food eaten across all fish
-- `max_fitness`: Best fish's food count
-- `population`: Number of surviving fish
-
-Example plot:
+The training system now tracks 18+ metrics across 8 comprehensive graphs to provide deep insight into evolutionary progress:
 
 ![Training Progress](assets/training_log.png)
+
+1. **Fitness Evolution**:
+   - **Mean (Green)**: Average food eaten. Increases as fish learn to hunt.
+   - **Median (Orange)**: The "middle" fish. If Mean > Median, a few "super-fish" are skewing the average.
+   - **Max (Blue)**: The value of the absolute best fish.
+   - **Shaded Area**: Standard deviation (population diversity).
+
+2. **Population Food Consumption**:
+   - Tracks total food eaten by the *entire population* per epoch.
+   - A rising curve means the ecosystem as a whole is becoming more efficient at extracting resources.
+
+3. **Fitness Distribution**:
+   - compares **Top 10%** vs **Bottom 10%** performance.
+   - Large gap = high inequality (some geniuses, some idiots).
+   - Small gap = converged population (everyone acts similarly).
+
+4. **Population Size**:
+   - Tracks number of surviving fish against the target (150).
+   - In early training, this might dip if fish are too stupid to eat.
+   - In late training, it should stay stable at 150.
+
+5. **Behavior (Speed vs Hunger)**:
+   - **Speed (Blue)**: Are fish evolving to swim fast?
+   - **Hunger (Red)**: Are they constantly starving?
+   - **Correlation**: Fast swimming burns energy → increases hunger. Evolution tries to find the sweet spot.
+
+6. **Energy Levels**:
+   - **Green Line (40)**: Reproduction threshold.
+   - If Average Energy (Yellow) is below this line, the population is struggling to reproduce.
+
+7. **Neural Network Weights**:
+   - **Mean Weight (Purple)**: Shifts in average brain connections.
+   - **Stability**: If the curve flattens, the "brain structure" has stabilized (converged).
+
+8. **Evolution Dynamics**:
+   - **Weight Change (Purple)**: How much the brain changes each generation. High = searching for solutions. Low = optimizing.
+   - **Diversity (Red)**: How different the fish are from each other. Zero = clones.
 
 ### Loading Trained Models
 
@@ -717,7 +748,7 @@ If you use this code in your research, please cite:
   title={3D Bottom Feeder Simulation},
   author={Jason Hoford},
   year={2025},
-  url={https://github.com/yourusername/3d-bottom-feeder-simulation}
+  url={https://github.com/yourusername/3d-bottom-feeder}
 }
 ```
 
